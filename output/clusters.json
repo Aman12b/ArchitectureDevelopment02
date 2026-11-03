@@ -1,0 +1,287 @@
+{
+  "model": "Xenova/all-MiniLM-L6-v2",
+  "database": "DuckDB",
+  "k": 5,
+  "silhouetteByK": {
+    "4": 0.1285,
+    "5": 0.172,
+    "6": 0.1599,
+    "7": 0.1522,
+    "8": 0.1414
+  },
+  "clusters": [
+    {
+      "cluster": 0,
+      "name": null,
+      "description": null,
+      "size": 4,
+      "keywords": [
+        "prepackaged",
+        "breakfast",
+        "croissant",
+        "simple",
+        "coffee",
+        "various"
+      ],
+      "representative": [
+        3,
+        5,
+        2
+      ],
+      "requirements": [
+        {
+          "id": 2,
+          "text": "We offer a number of prepackaged breakfasts like the mini-breakfast (one croissant, one coffee), the luxury breakfast (one croissant, one glass of orange juice, two kinds of jam, ham and eggs, one cup of coffee) and many more."
+        },
+        {
+          "id": 3,
+          "text": "Of course, our customers can also assemble an individual breakfast to their taste by choosing from a long list of simple products (croissant, orange juice, butter, ...)."
+        },
+        {
+          "id": 4,
+          "text": "A prepackaged product may contain simple products, but also other prepackaged products."
+        },
+        {
+          "id": 5,
+          "text": "So, a typical order consists of various amounts of various products (prepackaged ones and/or simple ones)."
+        }
+      ]
+    },
+    {
+      "cluster": 1,
+      "name": null,
+      "description": null,
+      "size": 5,
+      "keywords": [
+        "unit",
+        "product",
+        "label",
+        "grams",
+        "price",
+        "per"
+      ],
+      "representative": [
+        38,
+        22,
+        6
+      ],
+      "requirements": [
+        {
+          "id": 6,
+          "text": "Each product has a unit (e.g. 100 grams) and a price per unit denominated in Euros."
+        },
+        {
+          "id": 20,
+          "text": "The label is attached to the paper bag."
+        },
+        {
+          "id": 22,
+          "text": "The invoice shows the same data as the label plus the individual ordered products, their amounts and prices and the sum total."
+        },
+        {
+          "id": 38,
+          "text": "Each product has a unique product code as shown above."
+        },
+        {
+          "id": 39,
+          "text": "The string may contain any number of products but is naturally limited by the length text messages can have in general."
+        }
+      ]
+    },
+    {
+      "cluster": 2,
+      "name": null,
+      "description": null,
+      "size": 21,
+      "keywords": [
+        "clerk",
+        "payment",
+        "system",
+        "number",
+        "delivery",
+        "address"
+      ],
+      "representative": [
+        27,
+        13,
+        19
+      ],
+      "requirements": [
+        {
+          "id": 7,
+          "text": "Currently, our customers can place orders only over the phone."
+        },
+        {
+          "id": 9,
+          "text": "A customer number has seven digits that are preceded by a two-digit area code and followed by a one digit checksum."
+        },
+        {
+          "id": 11,
+          "text": "After the phone clerk has authenticated the customer (which includes checking that he is not blacklisted e.g. due to bad payment morale) the customer names one or several products to be added to the shopping cart."
+        },
+        {
+          "id": 13,
+          "text": "The customer can also decide to simply place a follow-up-order by naming one of her previous orders, which serves as a blueprint for the new order."
+        },
+        {
+          "id": 14,
+          "text": "Those three methods of assembling the shopping cart (direct naming of products, choosing from a list of suitable products presented by the phone clerk, naming an order as a blueprint) can be combined within placing one order."
+        },
+        {
+          "id": 15,
+          "text": "However, an order can only have one blueprint order at most."
+        },
+        {
+          "id": 16,
+          "text": "One order can serve as a blueprint many times."
+        },
+        {
+          "id": 17,
+          "text": "For each customer, only one address is predefined. Therefore, there is no need to specify a delivery address when ordering. The process ends by the phone clerk informing the customer about the order number, which is an eight-digit number with a checksum."
+        },
+        {
+          "id": 18,
+          "text": "A packing clerk looks at each order, assembles the ordered products and puts them into a paper bag."
+        },
+        {
+          "id": 19,
+          "text": "Using an ordinary text processing system, the packing clerk prints a label with his own name, the first name of the customer, the surname of the customer, the address, the order number and the delivery clerk he assigned to the order."
+        },
+        {
+          "id": 21,
+          "text": "Also, the packing clerk prints an invoice twice with the text processing system."
+        },
+        {
+          "id": 23,
+          "text": "If an invoice is printed several times, each copy gets a separate number."
+        },
+        {
+          "id": 24,
+          "text": "The delivery clerk calculates the optimal itinerary, often using an ordinary spreadsheet. This is important as many orders may be fulfilled within one itinerary."
+        },
+        {
+          "id": 25,
+          "text": "The delivery clerk prints out the optimal itinerary, takes the corresponding bags and invoices and drives to the corresponding customers."
+        },
+        {
+          "id": 26,
+          "text": "Each customer confirms delivery by signing a copy of the invoice. She keeps the other copy."
+        },
+        {
+          "id": 27,
+          "text": "Each customer can inquire into the status of her order over the phone using the order number. The phone clerk then tells the customer whether the delivery clerk is already on his way or not."
+        },
+        {
+          "id": 37,
+          "text": "In the future, customers can also order by text messages (SMS). In this case they send a defined string to our company number 384 29 734. The string looks like this: C 2339110045 W mypswd P EGG 1 P TOAST 2 P OJUICE 1. This represents an order of the customer with the customer number 2339110045 having the password mypswd. The order is for one egg, two toasts and one glass of orange juice."
+        },
+        {
+          "id": 40,
+          "text": "The system responds with a text message specifying the order number the system has assigned to the order."
+        },
+        {
+          "id": 42,
+          "text": "We have a payment system already in place. It receives interface records for expected payments. The interface record comprises the customerNumber, the orderNumber, the amountInEuros and the expected payment date."
+        },
+        {
+          "id": 43,
+          "text": "Once the packing clerk has finished assembling an order, a record representing an expected payment for the order should be transferred to the payment system."
+        },
+        {
+          "id": 44,
+          "text": "The system is supposed to print a business report for the manager every night automatically that lists the orders of a given day along with the product, the amount, the packing clerk and the delivery clerk, the customer, the customer's address and the order number."
+        }
+      ]
+    },
+    {
+      "cluster": 3,
+      "name": null,
+      "description": null,
+      "size": 7,
+      "keywords": [
+        "possible",
+        "canceling",
+        "message",
+        "number",
+        "call",
+        "collective"
+      ],
+      "representative": [
+        28,
+        29,
+        41
+      ],
+      "requirements": [
+        {
+          "id": 8,
+          "text": "To do so, they call our company number 384 29 734 and tell us their customer number."
+        },
+        {
+          "id": 10,
+          "text": "There are no collective orders of several customers."
+        },
+        {
+          "id": 28,
+          "text": "Canceling an order is possible by calling the phone clerk and naming the order number."
+        },
+        {
+          "id": 29,
+          "text": "Once the order has been assembled, canceling is not possible anymore."
+        },
+        {
+          "id": 30,
+          "text": "A cancelation cannot be undone."
+        },
+        {
+          "id": 31,
+          "text": "Updating of orders is not possible. If the customer wants to change an order, she has to cancel it and place a new order."
+        },
+        {
+          "id": 41,
+          "text": "Canceling by text message should be possible by sending a text message of the form O 261273842 to the above number. In the example, the order with the order number 261273842 is canceled."
+        }
+      ]
+    },
+    {
+      "cluster": 4,
+      "name": null,
+      "description": null,
+      "size": 5,
+      "keywords": [
+        "clerks",
+        "replaces",
+        "browser",
+        "based",
+        "less",
+        "current"
+      ],
+      "representative": [
+        36,
+        35,
+        32
+      ],
+      "requirements": [
+        {
+          "id": 12,
+          "text": "If the customer is not sure about certain products, she can tell the phone clerk the desired characteristics (e.g. less than 300 calories and less than 4 Euros) and gets a choice of suitable products to pick from."
+        },
+        {
+          "id": 32,
+          "text": "We want the current process to be automated (but not changed) by a web-based application. The application replaces the current ordering by phone which will be discontinued. It also replaces the text processing system used for labeling and the tools used for calculating and printing the optimal itinerary."
+        },
+        {
+          "id": 34,
+          "text": "The user groups are: customers, packing clerks, delivery clerks and managers. There will be no phone clerks in the future."
+        },
+        {
+          "id": 35,
+          "text": "The confirmation of the delivery by the customer should also be browser-based: The delivery clerk presents a smartphone to the customer who enters her password in a browser window to confirm the delivery."
+        },
+        {
+          "id": 36,
+          "text": "The software should offer a browser-based product search function that requires no authentication. The product search also replaces having the phone clerk list suitable products."
+        }
+      ]
+    }
+  ]
+}
